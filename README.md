@@ -65,31 +65,32 @@ Ativa ou desativa o foco no campo de input programaticamente.
 ## 🖥️ **Exemplo de uso**
 
 ```lua
-local myInput = Inputs.new({
-    x = 100,
-    y = 100,
-    width = 200,
-    height = 30,
-    text = "Digite aqui...",
-    font = "default",
-    mask = false,
-    number = false
-})
+local myInput = Inputs.new(
+    {
+        font = 'default',
+        mask = false,
+        number = false
+    }
+)
 
 function render()
-    myInput:render(
-        "Digite seu texto aqui...",
-        myInput.x,
-        myInput.y,
-        myInput.width,
-        myInput.height,
-        { text = tocolor(255, 255, 255), place = tocolor(150, 150, 150) },
+    myInput:render (
+        'Digite seu texto aqui...',
+        100,
+        100,
+        200,
+        30,
+        { 
+            text = tocolor (255, 255, 255, 100), 
+            place = tocolor (150, 150, 150, 100), 
+            rectangle = {255, 255, 255} 
+        },
         false, -- postgui
         true   -- wordbreak
     )
 end
 
-addEventHandler("onClientRender", root, render)
+addEventHandler ('onClientRender', root, render)
 ```
 
 ---
