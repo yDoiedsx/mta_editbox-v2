@@ -1,5 +1,19 @@
+local screen = {guiGetScreenSize ()}
+
 Inputs = {};
 Inputs.__index = Inputs;
+
+function CursorInElement (x, y, w, h)
+    if (not isCursorShowing ()) then
+        return false
+    end;
+
+    local tx, ty = getCursorPosition ()
+
+    tx, ty = tx * screen[1], ty * screen[2]
+
+    return tx >= x and tx <= x + w and ty >= y and ty <= y + h
+end;
 
 function Inputs.new (properties)
     local self = setmetatable ({}, Inputs);
@@ -66,9 +80,7 @@ function Inputs.new (properties)
 end;
 
 function Inputs:render (place, x, y, width, height, colors, post, wordbreak)
-    cursor:update ();
-
-    if (cursor:box (x, y, width, height)) then
+    if (CursorInElement (x, y, width, height)) then
         self.hover = true
     else
         self.hover = false
