@@ -22,7 +22,7 @@ Textos são renderizados na tela com suporte a quebra de linha (wordbreak) e ali
 # Limitações configuráveis:
 Definição do comprimento máximo de texto (length) e restrição a números (number).
 
-# // Funções //
+# Funções
 
 1. Inputs.new(properties)
 Cria um novo campo de input com as propriedades definidas na tabela properties.
@@ -42,7 +42,7 @@ Remove os manipuladores de eventos e limpa os recursos alocados para o input.
 4. Inputs:setFocus(state)
 Ativa ou desativa o foco no input programaticamente.
 
-// Uso //
+# Uso
 
 local myInput = Inputs.new({
     x = 100,
@@ -69,5 +69,7 @@ function render()
 end
 
 addEventHandler("onClientRender", root, render)
+
+# Personalização
 
 O sistema foi projetado para ser extensível e modular, permitindo fácil adaptação para diversas necessidades de interfaces gráficas no MTA:SA.
