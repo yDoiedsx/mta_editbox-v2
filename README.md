@@ -1,49 +1,70 @@
-# editbox made for the MTA
+# Sistema de Input Interativo para MTA:SA
 
-Este script implementa um sistema de inputs interativos altamente configurável para o MTA:SA (Multi Theft Auto: San Andreas). Ele permite criar campos de texto dinâmicos e personalizados, com suporte a diversas funcionalidades, incluindo mascaramento, navegação pelo texto, atalhos de teclado e suporte a eventos como clique, colagem e entrada de caracteres.
+Este script oferece um sistema avançado e configurável de campos de texto interativos para o MTA:SA (Multi Theft Auto: San Andreas). Ele permite criar inputs personalizados, altamente dinâmicos, e oferece suporte a uma ampla gama de funcionalidades como mascaramento de texto, navegação via teclado e interação por eventos como cliques e colagem.
 
-# Recursos principais
+---
 
-## Criação de inputs personalizados:
-Propriedades configuráveis como posição (x, y), tamanho (width, height), fonte (font) e texto inicial (text).
+## ✨ **Recursos principais**
 
-## Máscara de texto:
-Suporte para campos de senha onde o texto digitado pode ser mascarado com caracteres como *.
+### **1. Criação de inputs personalizados**
+- Posicionamento configurável: `x`, `y`, `width`, `height`.
+- Aparência ajustável: Fonte (`font`) e texto inicial (`text`).
 
-## Eventos de teclado e clique:
-Suporte a teclas de navegação (arrow_l, arrow_r), backspace, delete, enter e combinações com Ctrl para copiar, colar e selecionar texto.
+### **2. Máscara de texto**
+- Ideal para campos de senha, com suporte para mascarar o texto com caracteres específicos como `*`.
 
-## Controle de foco:
-Determina se o input está ativo e permite alternar entre estados de foco.
+### **3. Controle por teclado e mouse**
+- Navegação pelo texto usando setas (`arrow_l`, `arrow_r`), backspace, delete e enter.
+- Suporte a atalhos como Ctrl+C (copiar), Ctrl+V (colar) e Ctrl+A (selecionar tudo).
 
-## Renderização flexível:
-Textos são renderizados na tela com suporte a quebra de linha (wordbreak) e alinhamento. Além disso, o cursor é animado para uma melhor experiência visual.
+### **4. Controle de foco**
+- Determina se o campo está ativo, com alternância fácil entre estados de foco.
 
-## Limitações configuráveis:
-Definição do comprimento máximo de texto (length) e restrição a números (number).
+### **5. Renderização flexível**
+- Suporte para:
+  - Animações no cursor.
+  - Textos com quebra de linha e alinhamento.
+  - Definição de cores diferenciadas para o texto principal e placeholder.
 
-## Funções
+### **6. Restrições configuráveis**
+- Limite máximo de caracteres (`length`).
+- Restrição para aceitar apenas números (`number`).
 
-1. Inputs.new(properties)
-Cria um novo campo de input com as propriedades definidas na tabela properties.
+---
 
-## Propriedades padrão:
+## 🔧 **Funções principais**
 
-x, y, width, height: Controle de posicionamento e tamanho.
-font, text: Aparência e conteúdo inicial do input.
-number, mask: Restrições de texto e mascaramento.
+### **1. `Inputs.new(properties)`**
+Cria um novo campo de input com as propriedades especificadas.
 
-2. Inputs:render(...)
-Renderiza o campo de texto na tela com suporte a cores, posicionamento e animações.
+#### **Propriedades padrão:**
+- `x`, `y`, `width`, `height`: Controle de posicionamento e tamanho.
+- `font`, `text`: Aparência e texto inicial.
+- `mask`: Habilita ou desabilita o mascaramento do texto.
+- `number`: Restringe a entrada para números.
 
-3. Inputs:destroy()
-Remove os manipuladores de eventos e limpa os recursos alocados para o input.
+---
 
-4. Inputs:setFocus(state)
-Ativa ou desativa o foco no input programaticamente.
+### **2. `Inputs:render(...)`**
+Renderiza o campo de input na tela. Oferece suporte a:
+- Textos com cores distintas (texto e placeholder).
+- Opção de quebra de linha e pós-processamento.
 
-## Uso
+---
 
+### **3. `Inputs:destroy()`**
+Remove todos os manipuladores de eventos e libera os recursos alocados pelo campo de input.
+
+---
+
+### **4. `Inputs:setFocus(state)`**
+Ativa ou desativa o foco no campo de input programaticamente.
+
+---
+
+## 🖥️ **Exemplo de uso**
+
+```lua
 local myInput = Inputs.new({
     x = 100,
     y = 100,
@@ -69,7 +90,12 @@ function render()
 end
 
 addEventHandler("onClientRender", root, render)
+```
 
-## Personalização
+---
 
-O sistema foi projetado para ser extensível e modular, permitindo fácil adaptação para diversas necessidades de interfaces gráficas no MTA:SA.
+## 🎨 **Personalização**
+
+Este sistema foi projetado para ser **modular e extensível**, permitindo fácil adaptação para diversas interfaces gráficas no MTA:SA. Seja para inputs simples ou campos mais complexos, você pode ajustar as propriedades e o comportamento de acordo com suas necessidades.
+
+➡️ **Ideal para criar UIs responsivas e modernas no MTA:SA!**
