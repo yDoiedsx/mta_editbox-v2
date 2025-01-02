@@ -48,7 +48,7 @@ Cria um novo campo de input com as propriedades especificadas.
 ### **2. `Inputs:render(...)`**
 Renderiza o campo de input na tela. Oferece suporte a:
 - Textos com cores distintas (texto e placeholder).
-- Opção de quebra de linha e pós-processamento.
+- Opção de quebra de linha.
 
 ---
 
@@ -84,8 +84,8 @@ function render()
         myInput.width,
         myInput.height,
         { text = tocolor(255, 255, 255), place = tocolor(150, 150, 150) },
-        false, -- pós-processamento
-        true   -- quebra de linha
+        false, -- postgui
+        true   -- wordbreak
     )
 end
 
