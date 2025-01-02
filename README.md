@@ -4,30 +4,30 @@ Este script implementa um sistema de inputs interativos altamente configurável 
 
 # Recursos principais
 
-# Criação de inputs personalizados:
+## Criação de inputs personalizados:
 Propriedades configuráveis como posição (x, y), tamanho (width, height), fonte (font) e texto inicial (text).
 
-# Máscara de texto:
+## Máscara de texto:
 Suporte para campos de senha onde o texto digitado pode ser mascarado com caracteres como *.
 
-# Eventos de teclado e clique:
+## Eventos de teclado e clique:
 Suporte a teclas de navegação (arrow_l, arrow_r), backspace, delete, enter e combinações com Ctrl para copiar, colar e selecionar texto.
 
-# Controle de foco:
+## Controle de foco:
 Determina se o input está ativo e permite alternar entre estados de foco.
 
-# Renderização flexível:
+## Renderização flexível:
 Textos são renderizados na tela com suporte a quebra de linha (wordbreak) e alinhamento. Além disso, o cursor é animado para uma melhor experiência visual.
 
-# Limitações configuráveis:
+## Limitações configuráveis:
 Definição do comprimento máximo de texto (length) e restrição a números (number).
 
-# Funções
+## Funções
 
 1. Inputs.new(properties)
 Cria um novo campo de input com as propriedades definidas na tabela properties.
 
-# Propriedades padrão:
+## Propriedades padrão:
 
 x, y, width, height: Controle de posicionamento e tamanho.
 font, text: Aparência e conteúdo inicial do input.
@@ -42,7 +42,7 @@ Remove os manipuladores de eventos e limpa os recursos alocados para o input.
 4. Inputs:setFocus(state)
 Ativa ou desativa o foco no input programaticamente.
 
-# Uso
+## Uso
 
 local myInput = Inputs.new({
     x = 100,
@@ -70,6 +70,6 @@ end
 
 addEventHandler("onClientRender", root, render)
 
-# Personalização
+## Personalização
 
 O sistema foi projetado para ser extensível e modular, permitindo fácil adaptação para diversas necessidades de interfaces gráficas no MTA:SA.
